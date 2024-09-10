@@ -1,4 +1,4 @@
-# non-linear-programming
+# Optimization with Non-linear Programming
 some projects with the non linear programming
 
 # Problem 1:
