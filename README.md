@@ -47,3 +47,32 @@ The results are as below:
 
 
 As it can be seen from the question, the J function is a concavefunction (logarithmic), and the term is 'Maximize'. Also, the constraints are linear, so the feasible set is a convex set. Therefore, the problem is a convex optimization problem, and we know that the convex optimization problems have exactly one solution (their local optimum is their global optimum).
+
+
+# Problem 3:
+
+### Nonlinear Optimization with Pyomo
+
+In this project, we find the optimal solution to the following problem using the Pyomo library:
+
+
+<img src="images/6.png" width="200"/>
+
+Same as the previous problem, we model the problem like this:
+
+```python
+model = pyo.ConcreteModel()
+
+model.x1 = pyo.Var(domain=pyo.NonNegativeIntegers)
+model.x2 = pyo.Var(domain=pyo.NonNegativeIntegers)
+model.x3 = pyo.Var(domain=pyo.NonNegativeIntegers)
+model.x4 = pyo.Var(domain=pyo.NonNegativeIntegers)
+
+model.c1 = pyo.Constraint(expr=model.x1 + 2*model.x2 + model.x3 + 4*model.x4 <= 10)
+model.c2 = pyo.Constraint(expr=model.x2 >= 3)
+```
+
+The results are as below:
+
+
+<img src="images/7.png" width="300"/>
